@@ -44,7 +44,11 @@ const UserDialog = ({ open, onClose }: Props) => {
 	const onRegister = async () => {
 		await registerMutation.mutateAsync();
 	};
-	const onLogout = () => userStore.removeUser();
+	const onLogout = () => {
+		userStore.removeUser();
+		queryClient.invalidateQueries({ queryKey: ["items"] });
+		onClose();
+	};
 	return (
 		<Dialog open={open} onClose={onClose}>
 			<DialogTitle>{userStore.isLogin() ? "Logout" : "Register"}</DialogTitle>

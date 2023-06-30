@@ -10,13 +10,9 @@ import * as defaultOption from './ormconfig';
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => {
-        console.log(
-          '====>',
-          Object.assign({}, { ...defaultOption[0].options, synchronize: true }),
-        );
         return Object.assign(
           {},
-          { ...defaultOption[0].options, synchronize: true },
+          { ...defaultOption[0].options, synchronize: true }, // synchronize should be false for production
         );
       },
     }),
