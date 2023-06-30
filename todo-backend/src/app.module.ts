@@ -10,7 +10,14 @@ import * as defaultOption from './ormconfig';
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => {
-        return Object.assign({}, { ...defaultOption[0].options });
+        console.log(
+          '====>',
+          Object.assign({}, { ...defaultOption[0].options, synchronize: true }),
+        );
+        return Object.assign(
+          {},
+          { ...defaultOption[0].options, synchronize: true },
+        );
       },
     }),
     UserModule,
