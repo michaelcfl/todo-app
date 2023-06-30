@@ -35,6 +35,7 @@ Involved a simple guard
 
 Testing
 - `yarn test:e2e`
+  
 Focused on e2e test more because it is a simple todo api service
 Most of the endpoints are calling the corresponding service function directly. Writing e2e test can already confirm everything is working as expected without spending extra effort on unit testing.
 
@@ -48,6 +49,6 @@ It would be easier to put the execution of migration script in CD stage rather t
 Simple CRA
 
 utilized 
-react-query for API consumption
-material-ui for better ui component
-zustand for minimalistic state management (used to persist the userId mainly)
+- react-query for API consumption
+- material-ui for better ui component
+- zustand for minimalistic state management (used to persist the userId mainly)
