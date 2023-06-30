@@ -3,7 +3,6 @@ import request from 'supertest';
 import { DataSource } from 'typeorm';
 import { initAppAndDatabase } from './helpers/app';
 import { createItem, createUser } from './helpers/factories';
-import querystring from 'node:querystring';
 
 describe('UserController (e2e)', () => {
   let app: INestApplication;
