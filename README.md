@@ -44,12 +44,15 @@ Testing
 - `yarn test:e2e`
   
 Focused on e2e test more because it is a simple todo api service
+
 Most of the endpoints are calling the corresponding service function directly. Writing e2e test can already confirm everything is working as expected without spending extra effort on unit testing.
 
 DB Migration
 
 Created the typeorm migration script `migration:generate / migration:run` to handle the DB migrations
+
 `synchronize` for typeorm initialization is set to `true` in the code for simplicity of Dockerfile
+
 It would be easier to put the execution of migration script in CD stage rather than building stage
 
 ### Frontend
